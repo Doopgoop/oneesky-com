@@ -1,0 +1,343 @@
+/* 🌍 RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌑 BODY */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  background: black;
+  padding-top: 80px;
+  overflow-x: hidden;
+}
+
+/* 🌌 STARS CANVAS BACKGROUND */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* 🔝 NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li {
+  margin: 0 1rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #f00;
+}
+
+
+/* 🎤 HERO SECTION */
+.hero {
+    text-align: center;        /* center text */
+    padding: 20px;
+}
+
+.tagline {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #d0d0d0;
+    margin-bottom: 25px;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 400;
+    color: #e8e8e8;
+}
+
+.title span {
+    color: #f3e6c1;
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: #d2d2d2;
+    margin: 20px 0 40px;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;   /* center buttons */
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.btn.gold {
+    background: #d9b24a;
+    color: #111;
+}
+
+.btn.dark {
+    background: #0d0d0d;
+    color: #fff;
+    border: 1px solid #252525;
+}
+
+/* Smooth animation for all buttons */
+.btn {
+    transition: all 0.25s ease;
+}
+
+/* GOLD BUTTON HOVER */
+.btn.gold:hover {
+    background: #e4c15a;
+    transform: scale(1.05);
+}
+
+/* DARK BUTTON HOVER */
+.btn.dark:hover {
+    background: #1a1a1a;
+    border-color: #3a3a3a;
+    transform: scale(1.05);
+}
+
+
+/* 🌠 ABOUT SECTION */
+.about-section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 40px 20px;
+  text-align: left;
+  background: rgba(34, 34, 34, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.about-section img {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 30px auto 0;
+  border-radius: 10px;
+}
+
+/* 👕 MERCH SECTION */
+.section-2 {
+  width: min(1200px, 90%);
+  margin: 40px auto 0;
+  padding: 20px 0;
+  line-height: 2;
+  color: var(--color-light);
+}
+
+/* COMPONENT */
+.c-hotels {
+  width: min(1200px, 90%);
+  margin: 40px auto;
+  padding: 40px 20px;
+}
+
+.c-hotels__title {
+  width: min(1200px, 100%);
+  padding: 64px 20px;
+  color: var(--color-light);
+  text-align: center;
+margin: 40px auto;
+  font-size: 44px;
+  color: var(--color-brand);
+}
+
+.c-hotels__list {
+  display: grid;
+  grid-gap: 40px;
+}
+
+.c-hotels__item {
+  position: sticky;
+  top: 50px;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px auto;
+  border: 1px solid var(--color-dark);
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: minmax(400px, 70vh);
+  }
+
+  &:not(&:last-child) {
+    view-timeline-name: --card;
+    view-timeline-axis: block;
+    animation-timeline: --card;
+    animation-name: in-n-out;
+    animation-range: entry 90% cover 50%;
+    animation-fill-mode: both;
+  }
+
+  &-figure {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    @media (min-width: 768px) {
+      grid-column: 1 / 2;
+      grid-row: 1 / -1;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-info {
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    padding: 40px;
+    background-color: var(--color-light);
+
+    @media (min-width: 768px) {
+      grid-column: 2 / -1;
+      grid-row: 1 / -1;
+    }
+  }
+
+  &-title {
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  &-subtitle {
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  &-excerpt {
+    margin-bottom: 24px;
+  }
+
+  &-link {
+    width: max-content;
+    padding: 12px 24px;
+    text-decoration: none;
+    border: 1px solid var(--color-dark);
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      background-color: var(--color-dark);
+      color: var(--color-light);
+    }
+  }
+}
+
+@keyframes in-n-out {
+  0%,
+  75% {
+    scale: 100%;
+  }
+
+  100% {
+    scale: 85%;
+  }
+}
+
+/* 🦶 FOOTER */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+
+  .merch-section h2 {
+    font-size: 2rem;
+  }
+}
